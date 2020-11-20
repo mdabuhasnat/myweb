@@ -1,11 +1,19 @@
 
 pipeline{
     agent any
+    environment{
+        PATH = "/usr/share/apache-maven/bin:$PATH"
+    }
     stages{
         stage("Git Checkout"){
             steps{
                 git credentialsId: 'github', url: 'https://github.com/mdabuhasnat/myweb'
             }
-        } 
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
     }
 }
