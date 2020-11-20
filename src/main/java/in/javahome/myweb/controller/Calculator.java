@@ -8,8 +8,6 @@ public class Calculator {
 	public int j=2;
 	
 	public int add(int i, int j){
-		String name = null;
-		name.toUpperCase();
 		return i+j;
 	}
 	public int multiply(int i, int j){
